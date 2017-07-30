@@ -1,6 +1,6 @@
 package com.fooock.core;
 
-import com.fooock.core.instrument.Instrument;
+import com.fooock.core.currency.Currency;
 
 import java.io.IOException;
 
@@ -9,5 +9,5 @@ import java.io.IOException;
  */
 public interface Context {
 
-    Tick tick(Instrument instrument) throws IOException;
+    Tick tick(Currency currency) throws IOException;
 }

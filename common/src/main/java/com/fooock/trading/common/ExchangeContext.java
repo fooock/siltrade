@@ -2,7 +2,7 @@ package com.fooock.trading.common;
 
 import com.fooock.core.Context;
 import com.fooock.core.Tick;
-import com.fooock.core.instrument.Instrument;
+import com.fooock.core.currency.Currency;
 import com.fooock.trading.common.mapper.CurrencyMapper;
 import com.fooock.trading.common.mapper.TickMapper;
 import org.knowm.xchange.Exchange;
@@ -28,8 +28,8 @@ public abstract class ExchangeContext implements Context {
     }
 
     @Override
-    public Tick tick(Instrument instrument) throws IOException {
-        final Ticker ticker = marketDataService.getTicker(currencyMapper.map(instrument));
+    public Tick tick(Currency currency) throws IOException {
+        final Ticker ticker = marketDataService.getTicker(currencyMapper.map(currency));
         return tickMapper.map(ticker);
     }
 }
