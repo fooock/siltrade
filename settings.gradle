@@ -2,4 +2,6 @@ rootProject.name = 'trading'
 include 'core'
 include 'bitstamp-api'
 include 'common'
+include 'kraken-api'
+include 'poloniex-api'
 

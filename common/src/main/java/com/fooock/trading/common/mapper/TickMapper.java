@@ -1,4 +1,4 @@
-package com.fooock.trading.common;
+package com.fooock.trading.common.mapper;
 
 import com.fooock.core.Number;
 import com.fooock.core.Tick;

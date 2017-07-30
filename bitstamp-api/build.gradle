@@ -10,7 +10,6 @@ repositories {
 }
 
 dependencies {
-    compile 'org.knowm.xchange:xchange-core:4.2.0'
     compile 'org.knowm.xchange:xchange-bitstamp:4.2.0'
 
     compile project(':common')

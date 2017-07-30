@@ -1,4 +1,4 @@
-package com.fooock.trading.common;
+package com.fooock.trading.common.mapper;
 
 import com.fooock.core.instrument.Instrument;
 import com.fooock.core.mapper.Mapper;
