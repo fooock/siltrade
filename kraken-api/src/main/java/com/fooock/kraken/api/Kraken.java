@@ -23,7 +23,7 @@ public final class Kraken {
 
         // Exchange info
         final Info info = krakenContext.info();
-        logger.info("Exchange: {} ({})", info.name(), info.web());
+        logger.info("Initialize exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
         final List<Currency> currencies = krakenContext.currencies();

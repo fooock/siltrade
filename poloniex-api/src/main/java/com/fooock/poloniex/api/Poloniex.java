@@ -23,7 +23,7 @@ public final class Poloniex {
 
         // Exchange info
         final Info info = poloniexContext.info();
-        logger.info("Exchange: {} ({})", info.name(), info.web());
+        logger.info("Initialize exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
         final List<Currency> currencies = poloniexContext.currencies();

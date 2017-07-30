@@ -30,6 +30,11 @@ public abstract class ExchangeContext implements Context {
     private final CurrencyPairMapper currencyPairMapper = new CurrencyPairMapper();
     private final TickMapper tickMapper = new TickMapper();
 
+    /**
+     * Base class to initialize all exchanges
+     *
+     * @param exchangeName Exchange class name
+     */
     protected ExchangeContext(String exchangeName) {
         exchange = ExchangeFactory.INSTANCE
                 .createExchange(exchangeName);

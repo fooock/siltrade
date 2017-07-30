@@ -23,7 +23,7 @@ public class Bitstamp {
 
         // Exchange info
         final Info info = bitstampContext.info();
-        logger.info("Exchange: {} ({})", info.name(), info.web());
+        logger.info("Initialize exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
         final List<Currency> currencies = bitstampContext.currencies();
