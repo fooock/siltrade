@@ -1,0 +1,16 @@
+group 'com.fooock'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.decimal4j:decimal4j:1.0.3'
+
+    testCompile 'junit:junit:4.12'
+}
