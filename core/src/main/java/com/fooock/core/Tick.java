@@ -12,7 +12,6 @@ public final class Tick {
     private final Number low;
     private final Number close;
     private final Number volume;
-    private final Number amount;
 
     /**
      * Create this object
@@ -23,16 +22,14 @@ public final class Tick {
      * @param low    Low price
      * @param close  Close price
      * @param volume Volume during time period
-     * @param amount Amount during time period
      */
-    public Tick(Time time, Number open, Number high, Number low, Number close, Number volume, Number amount) {
+    public Tick(Time time, Number open, Number high, Number low, Number close, Number volume) {
         this.time = time;
         this.open = open;
         this.high = high;
         this.low = low;
         this.close = close;
         this.volume = volume;
-        this.amount = amount;
     }
 
     /**
@@ -87,14 +84,5 @@ public final class Tick {
      */
     public Number volume() {
         return volume;
-    }
-
-    /**
-     * Amount during time period
-     *
-     * @return Tick amount during time period
-     */
-    public Number amount() {
-        return amount;
     }
 }
