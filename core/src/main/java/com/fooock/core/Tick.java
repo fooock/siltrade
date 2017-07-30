@@ -7,28 +7,28 @@ public final class Tick {
 
     private final Time time;
 
-    private final Number open;
+    private final Number bid;
     private final Number high;
     private final Number low;
-    private final Number close;
+    private final Number ask;
     private final Number volume;
 
     /**
      * Create this object
      *
      * @param time   Time of the tick period
-     * @param open   Open price
+     * @param bid    Bid price
      * @param high   High price
      * @param low    Low price
-     * @param close  Close price
+     * @param ask    Ask price
      * @param volume Volume during time period
      */
-    public Tick(Time time, Number open, Number high, Number low, Number close, Number volume) {
+    public Tick(Time time, Number bid, Number high, Number low, Number ask, Number volume) {
         this.time = time;
-        this.open = open;
+        this.bid = bid;
         this.high = high;
         this.low = low;
-        this.close = close;
+        this.ask = ask;
         this.volume = volume;
     }
 
@@ -42,12 +42,12 @@ public final class Tick {
     }
 
     /**
-     * Open price
+     * Bid price
      *
-     * @return Tick open price
+     * @return Tick bid price
      */
-    public Number open() {
-        return open;
+    public Number bid() {
+        return bid;
     }
 
     /**
@@ -69,12 +69,12 @@ public final class Tick {
     }
 
     /**
-     * Close price
+     * Ask price
      *
-     * @return Tick close price
+     * @return Tick ask price
      */
-    public Number close() {
-        return close;
+    public Number ask() {
+        return ask;
     }
 
     /**

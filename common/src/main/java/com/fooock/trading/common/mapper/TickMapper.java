@@ -14,11 +14,11 @@ public final class TickMapper implements Mapper<Ticker, Tick> {
     @Override
     public Tick map(Ticker from) {
         final Time time = new Time(from.getTimestamp());
-        final Number open = new Number(from.getBid().toString());
+        final Number bid = new Number(from.getBid().toString());
         final Number high = new Number(from.getHigh().toString());
         final Number low = new Number(from.getLow().toString());
-        final Number close = new Number(from.getAsk().toString());
+        final Number ask = new Number(from.getAsk().toString());
         final Number volume = new Number(from.getVolume().toString());
-        return new Tick(time, open, high, low, close, volume);
+        return new Tick(time, bid, high, low, ask, volume);
     }
 }
