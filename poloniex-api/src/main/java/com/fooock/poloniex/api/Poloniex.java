@@ -1,8 +1,9 @@
 package com.fooock.poloniex.api;
 
-import com.fooock.core.Tick;
 import com.fooock.core.currency.Currency;
 import com.fooock.core.exchange.Info;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,21 +13,24 @@ import java.util.List;
  */
 public final class Poloniex {
 
-    public static void main(String[] args) throws IOException {
+    private final Logger logger = LoggerFactory.getLogger(Poloniex.class);
+
+    /**
+     * Initialize trading with poloniex exchange
+     */
+    private void initialize() {
         final PoloniexContext poloniexContext = new PoloniexContext();
 
         // Exchange info
         final Info info = poloniexContext.info();
-        System.out.println(info);
+        logger.info("Exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
         final List<Currency> currencies = poloniexContext.currencies();
-        for (Currency currency : currencies) {
-            System.out.println(currency);
-        }
+        logger.info("Found {} currency pairs", currencies.size());
+    }
 
-        // Get current tick
-        final Tick tick = poloniexContext.tick(currencies.get(0));
-        System.out.println(tick);
+    public static void main(String[] args) throws IOException {
+        new Poloniex().initialize();
     }
 }

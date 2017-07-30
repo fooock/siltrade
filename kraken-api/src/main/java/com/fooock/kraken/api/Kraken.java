@@ -1,8 +1,9 @@
 package com.fooock.kraken.api;
 
-import com.fooock.core.Tick;
 import com.fooock.core.currency.Currency;
 import com.fooock.core.exchange.Info;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,21 +13,24 @@ import java.util.List;
  */
 public final class Kraken {
 
-    public static void main(String[] args) throws IOException {
+    private final Logger logger = LoggerFactory.getLogger(Kraken.class);
+
+    /**
+     * Initialize trading with kraken exchange
+     */
+    private void initialize() {
         final KrakenContext krakenContext = new KrakenContext();
 
         // Exchange info
         final Info info = krakenContext.info();
-        System.out.println(info);
+        logger.info("Exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
         final List<Currency> currencies = krakenContext.currencies();
-        for (Currency currency : currencies) {
-            System.out.println(currency);
-        }
+        logger.info("Found {} currency pairs", currencies.size());
+    }
 
-        // Get current tick
-        final Tick tick = krakenContext.tick(currencies.get(0));
-        System.out.println(tick);
+    public static void main(String[] args) throws IOException {
+        new Kraken().initialize();
     }
 }

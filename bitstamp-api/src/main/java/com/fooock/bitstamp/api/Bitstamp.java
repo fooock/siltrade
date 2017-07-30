@@ -1,8 +1,9 @@
 package com.fooock.bitstamp.api;
 
-import com.fooock.core.Tick;
 import com.fooock.core.currency.Currency;
 import com.fooock.core.exchange.Info;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,21 +13,24 @@ import java.util.List;
  */
 public class Bitstamp {
 
-    public static void main(String[] args) throws IOException {
+    private final Logger logger = LoggerFactory.getLogger(Bitstamp.class);
+
+    /**
+     * Initialize trading with bitstamp exchange
+     */
+    private void initialize() {
         final BitstampContext bitstampContext = new BitstampContext();
 
         // Exchange info
         final Info info = bitstampContext.info();
-        System.out.println(info);
+        logger.info("Exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
         final List<Currency> currencies = bitstampContext.currencies();
-        for (Currency currency : currencies) {
-            System.out.println(currency);
-        }
+        logger.info("Found {} currency pairs", currencies.size());
+    }
 
-        // Get current tick
-        final Tick tick = bitstampContext.tick(currencies.get(0));
-        System.out.println(tick);
+    public static void main(String[] args) throws IOException {
+        new Bitstamp().initialize();
     }
 }
