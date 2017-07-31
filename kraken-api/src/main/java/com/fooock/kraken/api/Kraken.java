@@ -5,7 +5,6 @@ import com.fooock.core.exchange.Info;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -30,7 +29,7 @@ public final class Kraken {
         logger.info("Found {} currency pairs", currencies.size());
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         new Kraken().initialize();
     }
 }

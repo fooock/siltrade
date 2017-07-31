@@ -30,7 +30,7 @@ public class Bitstamp {
         logger.info("Found {} currency pairs", currencies.size());
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         new Bitstamp().initialize();
     }
 }

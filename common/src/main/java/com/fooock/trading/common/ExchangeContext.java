@@ -51,6 +51,10 @@ public abstract class ExchangeContext implements Context {
     @Override
     public Tick tick(Currency currency) throws IOException {
         final Ticker ticker = marketDataService.getTicker(currencyMapper.map(currency));
+        if (ticker == null) {
+            throw new IOException(String.format(
+                    "Tick not available for currency %s in exchange %s", currency.currencyPair(), info().name()));
+        }
         return tickMapper.map(ticker);
     }
 
