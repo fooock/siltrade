@@ -1,7 +1,7 @@
 package com.fooock.core;
 
 import com.fooock.core.account.Account;
-import com.fooock.core.currency.Currency;
+import com.fooock.core.currency.CurrencyPair;
 import com.fooock.core.exchange.Info;
 
 import java.io.IOException;
@@ -14,9 +14,9 @@ public interface Context {
 
     Info info();
 
-    Tick tick(Currency currency) throws IOException;
+    Tick tick(CurrencyPair currencyPair) throws IOException;
 
-    List<Currency> currencies();
+    List<CurrencyPair> currencies();
 
     Account account() throws IOException;
 }

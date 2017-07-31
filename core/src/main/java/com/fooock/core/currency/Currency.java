@@ -5,18 +5,25 @@ package com.fooock.core.currency;
  */
 public final class Currency {
 
-    private final String currencyBase;
+    private final String name;
+    private final String symbol;
+    private final String code;
 
-    public Currency(String currencyBase) {
-        this.currencyBase = currencyBase;
+    public Currency(String displayName, String symbol, String currencyCode) {
+        this.name = displayName;
+        this.symbol = symbol;
+        this.code = currencyCode;
     }
 
-    public String currencyPair() {
-        return currencyBase;
+    public String name() {
+        return name;
     }
 
-    @Override
-    public String toString() {
-        return currencyBase;
+    public String symbol() {
+        return symbol;
+    }
+
+    public String code() {
+        return code;
     }
 }

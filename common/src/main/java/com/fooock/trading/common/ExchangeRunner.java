@@ -2,7 +2,7 @@ package com.fooock.trading.common;
 
 import com.fooock.core.Context;
 import com.fooock.core.Runner;
-import com.fooock.core.currency.Currency;
+import com.fooock.core.currency.CurrencyPair;
 import com.fooock.core.exchange.Info;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +36,7 @@ public final class ExchangeRunner implements Runner {
         logger.info("Initialize exchange: {} ({})", info.name(), info.web());
 
         // Get supported currencies
-        final List<Currency> currencies = context.currencies();
+        final List<CurrencyPair> currencies = context.currencies();
         logger.info("Found {} currency pairs", currencies.size());
     }
 

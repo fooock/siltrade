@@ -1,16 +1,15 @@
 package com.fooock.trading.common.mapper;
 
-import com.fooock.core.currency.Currency;
+import com.fooock.core.currency.CurrencyPair;
 import com.fooock.core.mapper.Mapper;
-import org.knowm.xchange.currency.CurrencyPair;
 
 /**
  *
  */
-public final class CurrencyPairMapper implements Mapper<CurrencyPair, Currency> {
+public final class CurrencyPairMapper implements Mapper<org.knowm.xchange.currency.CurrencyPair, CurrencyPair> {
 
     @Override
-    public Currency map(CurrencyPair from) {
-        return new Currency(from.toString());
+    public CurrencyPair map(org.knowm.xchange.currency.CurrencyPair from) {
+        return new CurrencyPair(from.toString());
     }
 }
