@@ -1,5 +1,6 @@
 package com.fooock.core;
 
+import com.fooock.core.account.Account;
 import com.fooock.core.currency.Currency;
 import com.fooock.core.exchange.Info;
 
@@ -16,4 +17,6 @@ public interface Context {
     Tick tick(Currency currency) throws IOException;
 
     List<Currency> currencies();
+
+    Account account() throws IOException;
 }

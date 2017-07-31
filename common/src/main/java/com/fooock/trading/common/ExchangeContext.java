@@ -2,6 +2,7 @@ package com.fooock.trading.common;
 
 import com.fooock.core.Context;
 import com.fooock.core.Tick;
+import com.fooock.core.account.Account;
 import com.fooock.core.currency.Currency;
 import com.fooock.core.exchange.Info;
 import com.fooock.trading.common.mapper.CurrencyMapper;
@@ -66,5 +67,10 @@ public abstract class ExchangeContext implements Context {
             currencies.add(currencyPairMapper.map(exchangeSymbol));
         }
         return currencies;
+    }
+
+    @Override
+    public Account account() throws IOException {
+        return null;
     }
 }
