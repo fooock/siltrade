@@ -36,7 +36,7 @@ public abstract class ExchangeContext implements Context {
     private final AccountInfoMapper accountInfoMapper = new AccountInfoMapper();
 
     /**
-     * Base class to initialize all exchanges
+     * Base class to start all exchanges
      *
      * @param exchangeName Exchange class name
      */

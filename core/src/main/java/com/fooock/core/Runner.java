@@ -5,7 +5,7 @@ package com.fooock.core;
  */
 public interface Runner {
 
-    void initialize();
+    void start();
 
     Context context();
 }
