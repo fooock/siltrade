@@ -41,8 +41,7 @@ public abstract class ExchangeContext implements Context {
      * @param exchangeName Exchange class name
      */
     protected ExchangeContext(String exchangeName) {
-        exchange = ExchangeFactory.INSTANCE
-                .createExchange(exchangeName);
+        exchange = ExchangeFactory.INSTANCE.createExchange(exchangeName);
         marketDataService = exchange.getMarketDataService();
         accountService = exchange.getAccountService();
     }

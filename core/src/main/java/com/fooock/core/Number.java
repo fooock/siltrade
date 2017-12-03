@@ -26,7 +26,7 @@ public final class Number implements Comparable<Number> {
      * @throws NumberFormatException If number string is not a valid number
      */
     public Number(String number) {
-        this.decimal = new BigDecimal(number, MATH_CONTEXT);
+        this(new BigDecimal(number, MATH_CONTEXT));
     }
 
     private Number(BigDecimal number) {
